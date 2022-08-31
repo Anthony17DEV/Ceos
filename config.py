@@ -1,22 +1,25 @@
+#Importações usadas durante o aplicativo
 from logging import exception
 import requests as rq
 import datetime
 
-version = "1.8.0"
+#Anotação de versões
+version = "1.13.0"
 cidade = 'Tibau'
 
-
+#Introdução do aplicativo
 def intro():
 	msg = "CEOS - Versão {} / by: AnthonyYNF".format(version)
 	print("-" * len(msg) +  "\n{}\n".format(msg)  +   "-" * len(msg))
 
-
+#Lista de erros usadas para a resposta da assistente
 lista_erros = [
 		"Não consegui entender, repita por favor",
 		"Desculpe, não entendi",
 		"Repita novamente por favor"
 ]
 
+#Convesasão usada para inicio do projeto
 conversas = {
 	"Olá": "oi, tudo bem?",
 	"Olá Olá": "oi, tudo bem?",
@@ -51,7 +54,7 @@ comandos = {
 	"reiniciar": "reiniciando"
 }
 
-
+#Definição para verificação do nome do usuario e reconhecimento
 def verifica_nome(user_name):
 	if user_name.startswith("Meu nome é"):
 		user_name = user_name.replace("Meu nome é", "")
@@ -103,6 +106,7 @@ def name_list():
 		nomes.close()
 
 
+#Definição para o clima
 def clima_tempo():
 	endereco_api = "http://api.openweathermap.org/data/2.5/weather?appid=78d740515eb1d6807ad36a52ba0dabf3&q="
 	url = endereco_api + cidade
@@ -141,6 +145,16 @@ def temperatura():
 
 def time():
 	now = datetime.datetime.now()
-	reposta = "São {} horas e {} minutos.".format(now.strftime("%H"), now.strftime("%M"))
-	return reposta
+	resposta = "São {} horas e {} minutos.".format(now.strftime("%H"), now.strftime("%M"))
+	return resposta
 
+def date():
+	now = datetime.datetime.now()
+	resposta = "Hoje é dia {} do {} de {}".format(now.day, now.strftime("%m"), now.year)
+	return resposta
+
+#def abrir():
+
+
+
+	
