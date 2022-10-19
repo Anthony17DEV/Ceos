@@ -62,58 +62,60 @@ def CEOS():
 					entrada = rec.recognize_google(audio, language="pt")
 					print("{}: {}".format(user_name, entrada))
 
+					entrada = entrada.lower()
+
 					#Chamada para perguntar as horas
-					if "Que horas são" in entrada:
+					if "que horas são" in entrada:
 						resposta = time()
 
-					elif "Que dia é hoje" in entrada:
+					elif "que dia é hoje" in entrada:
 						resposta = date()
 
-					elif "Abrir bloco de notas" in entrada:
-						sai_som("Abrindo bloco de notas")
-						print("Abrindo bloco de notas")
-						resposta = os.system("notepad.exe")
-
-					elif "Abrir calculadora" in entrada:
+					elif entrada == "abrir calculadora":
 						sai_som("Abrindo a calculadora")
 						print("Abrindo a calculadora")
 						resposta = os.system("calc.exe")
 
-					elif "Abrir cmd" in entrada:
+					elif entrada == "abrir cmd":
 						sai_som("Abrindo CMD")
 						print("Abrindo CMD")
 						resposta = os.system("cmd.exe")
 
-					elif "Abrir painel de controle" in entrada:
+					elif entrada == "abrir painel de controle":
 						sai_som("Abrindo painel de controle")
 						print("Abrindo painel de controle")
 						resposta = os.system("control.exe")
 
-					elif "Abrir paint" in entrada:
+					elif entrada == "abrir pente":
 						sai_som("Abrindo o paint")
 						print("Abrindo o paint")
 						resposta = os.system("mspaint.exe")
-					
-					elif "abrir Opera" or "Abrir opera" or "abrir ópera" in entrada:
-						sai_som("Abrindo Opera GX")
-						print("Abrindo OperaGX")
-						resposta = os.system('"C:/Users/Anthony/AppData/Local/Programs/Opera GX/opera.exe"')
-
-					elif "Abrir Spotify" in entrada:
+			
+					elif entrada == "abrir spotify":
 						sai_som("Abrindo spotify")
 						print("Abrindo Spotify")
 						resposta = os.system('"C:/Users/Anthony/AppData/Roaming/Spotify/Spotify.exe"')
 					
-					elif "Abrir discord" in entrada:
+					elif entrada == "abrir discord":
 						sai_som("Abrindo o discord")
 						print("Abrindo o discord")
 						resposta = os.system('"C:/Users/Anthony/AppData/Local/Discord/Update.exe"')
 
-					elif "Abrir liga das lendas" or "abrir Liga das lendas" in entrada:
+					elif entrada == "abrir liga das lendas":
 						sai_som("Abrindo o league of legends")
 						print("Abrindo o league of legends")
 						resposta = os.system('"C:/Riot Games/League of Legends/LeagueClient.exe"')
-					
+
+					elif entrada == "abrir navegador":
+						sai_som("Abrindo Opera GX")
+						print("Abrindo OperaGX")
+						resposta = os.system('"C:/Users/Anthony/AppData/Local/Programs/Opera GX/opera.exe"')
+
+					elif entrada == "abrir bloco de notas":
+						sai_som("Abrindo bloco de notas")
+						print("Abrindo bloco de notas")
+						resposta = os.system("notepad.exe")
+	
 					#Chamada para perguntar sobre a temperatura 
 					elif "qual é a temperatura de hoje" in entrada:
 
