@@ -4,7 +4,7 @@ import requests as rq
 import datetime
 
 #Anotação de versões
-version = "1.13.0"
+version = "1.14.0"
 cidade = 'Tibau'
 
 #Introdução do aplicativo
@@ -153,8 +153,4 @@ def date():
 	resposta = "Hoje é dia {} do {} de {}".format(now.day, now.strftime("%m"), now.year)
 	return resposta
 
-#def abrir():
 
-
-
-	
