@@ -94,22 +94,22 @@ def CEOS():
 					elif entrada == "abrir spotify":
 						sai_som("Abrindo spotify")
 						print("Abrindo Spotify")
-						resposta = os.system('"C:/Users/Anthony/AppData/Roaming/Spotify/Spotify.exe"')
+						resposta = os.system('"C:/Users/antho/AppData/Roaming/Spotify/Spotify.exe"')
 					
 					elif entrada == "abrir discord":
 						sai_som("Abrindo o discord")
 						print("Abrindo o discord")
-						resposta = os.system('"C:/Users/Anthony/AppData/Local/Discord/Update.exe"')
+						resposta = os.system('"C:/Users/antho/AppData/Local/Discord/Update.exe"')
 
 					elif entrada == "abrir liga das lendas":
 						sai_som("Abrindo o league of legends")
 						print("Abrindo o league of legends")
-						resposta = os.system('"C:/Riot Games/League of Legends/LeagueClient.exe"')
+						resposta = os.system('"D:/Riot Games/Riot Client/RiotClientServices.exe"')
 
 					elif entrada == "abrir navegador":
 						sai_som("Abrindo Opera GX")
 						print("Abrindo OperaGX")
-						resposta = os.system('"C:/Users/Anthony/AppData/Local/Programs/Opera GX/opera.exe"')
+						resposta = os.system('"C:/Users/antho/AppData/Local/Programs/Opera GX/opera.exe"')
 
 					elif entrada == "abrir bloco de notas":
 						sai_som("Abrindo bloco de notas")
