@@ -6,6 +6,7 @@ from config import *
 from random import choice
 import datetime
 import os
+import pyautogui as pyg
 
 #Reprodutor de voz
 reproducao = pyttsx3.init()
@@ -125,7 +126,26 @@ def CEOS():
 						temp_min = lista_tempo[2]
 
 						resposta = "A temperatura de hoje é {:.2f}º. Temos uma máxima de {:.2f}º e uma minima de {:.2f}º".format(temp, temp_max, temp_min)
-					
+
+					elif entrada == "quero fazer uma pesquisa":
+						sai_som("Digite oque deseja pesquisar")
+						texto = pyg.prompt("OQUE DESEJA PESQUISAR ?")
+						
+						while texto == "":
+							pyg.alert("Digite algo")
+							texto = pyg.prompt("OQUE DESEJA PESQUISAR ?")
+						if texto == None:
+							exit()
+
+						pyg.press("win")
+						pyg.write("Navegador", interval= 0.2)
+						pyg.press("Enter")
+						sleep(2)
+						pyg.write(texto, interval= 0.2)
+						pyg.press("Enter")
+						print("Aqui está sua pesquisa")
+						sai_som("Aqui está sua pesquisa")
+
 					#Chamada para informações gerais sobre a cidade
 					elif "informações" in entrada and "cidade" in entrada:
 
